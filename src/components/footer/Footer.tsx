@@ -13,9 +13,15 @@ function Footer() {
           </p>
           <p className="text-lg">Acesse nossas redes sociais</p>
           <div className="flex gap-2">
+            <a href="https://www.linkedin.com/in/samarajdias" target="_blank">
             <LinkedinLogo size={48} weight="bold" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
             <InstagramLogo size={48} weight="bold" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
             <FacebookLogo size={48} weight="bold" />
+            </a>
           </div>
         </div>
       </div>
