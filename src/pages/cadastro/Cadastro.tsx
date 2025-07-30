@@ -1,8 +1,9 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState, useEffect, type ChangeEvent, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RotatingLines } from 'react-loader-spinner'
 import { cadastrarUsuario } from '../../services/Service'
-import Usuario from '../../models/Usuario'
+import type Usuario from '../../models/Usuario'
 import './Cadastro.css'
 
 function Cadastro() {
@@ -22,16 +23,16 @@ function Cadastro() {
   })
   
   useEffect(() => {
-    if (usuario.id !== 0){
+    if (usuario.id !== 0) {
       retornar()
     }
   }, [usuario])
 
-  function retornar(){
+  function retornar() {
     navigate('/login')
   }
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value
@@ -39,24 +40,24 @@ function Cadastro() {
 
   }
 
-  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>){
+  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmaSenha(e.target.value)
   }
 
-  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
+  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
+    if(confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
 
       setIsLoading(true)
 
       try{
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
-      }catch(error){
+      } catch (error) {
         alert('Erro ao cadastrar o usuário!')
       }
-    }else{
+    } else {
       alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
       setUsuario({...usuario, senha: ''})
       setConfirmaSenha('')
@@ -145,7 +146,7 @@ function Cadastro() {
             <button 
                 type='submit'
                 className='rounded text-white bg-indigo-400 
-                            hover:bg-indigo-900 w-1/2 py-2
+                          hover:bg-indigo-900 w-1/2 py-2
                             flex justify-center' 
                 >
                   {isLoading ? <RotatingLines

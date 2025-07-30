@@ -1,4 +1,7 @@
-import axios from "axios";
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
+/* eslint-disable @typescript-eslint/no-wrapper-object-types */
+
+import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://blog-pessoal-saqe.onrender.com'
