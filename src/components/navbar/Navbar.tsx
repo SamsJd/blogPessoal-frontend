@@ -11,7 +11,7 @@ function Navbar() {
   function logout() {
 
     handleLogout()
-    alert('O Usuário foi desconectado com sucesso!')
+    alert('O usuário foi desconectado com sucesso!')
     navigate('/')
   }
 
