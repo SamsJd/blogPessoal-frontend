@@ -27,7 +27,7 @@ function DeletarPostagem() {
         }
       })
     } catch (error: any) {
-      if (error.toString().includes('403')) {
+      if (error.toString().includes('401')) {
         handleLogout()
       }
     }
@@ -59,7 +59,7 @@ function DeletarPostagem() {
       ToastAlerta('Postagem apagada com sucesso', 'sucesso')
 
     } catch (error: any) {
-      if (error.toString().includes('403')) {
+      if (error.toString().includes('401')) {
         handleLogout()
       }else {
         ToastAlerta('Erro ao deletar a postagem.', 'erro')

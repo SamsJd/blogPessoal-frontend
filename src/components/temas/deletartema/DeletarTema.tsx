@@ -59,7 +59,7 @@ function DeletarTema() {
       ToastAlerta('Tema apagado com sucesso', 'sucesso')
 
     } catch (error: any) {
-      if (error.toString().includes('403')) {
+      if (error.toString().includes('401')) {
         handleLogout()
       }else {
         ToastAlerta('Erro ao deletar o tema.', 'erro')
