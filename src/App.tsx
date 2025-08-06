@@ -1,6 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
@@ -18,6 +20,7 @@ function App() {
   return (
     <>
       <AuthProvider>
+        <ToastContainer/>
         <BrowserRouter>
           <Navbar />
           <div className='min-h-[80vh]'>
