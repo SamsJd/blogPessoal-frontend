@@ -149,6 +149,21 @@ function FormPostagem() {
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaPostagem}>
         <div className="flex flex-col gap-2">
+          <p>Tema da Postagem</p>
+          <select name="tema" id="tema" className='border p-2 border-slate-800 rounded'
+            onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
+          >
+            <option value="" selected disabled>Selecione um Tema</option>
+
+            {temas.map((tema) => (
+              <>
+                <option value={tema.id} >{tema.descricao}</option>
+              </>
+            ))}
+
+          </select>
+        </div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="titulo">Título da Postagem</label>
           <input
             type="text"
@@ -172,21 +187,18 @@ function FormPostagem() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <p>Tema da Postagem</p>
-          <select name="tema" id="tema" className='border p-2 border-slate-800 rounded'
-            onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
-          >
-            <option value="" selected disabled>Selecione um Tema</option>
-
-            {temas.map((tema) => (
-              <>
-                <option value={tema.id} >{tema.descricao}</option>
-              </>
-            ))}
-
-          </select>
-        </div>
+        {/* <div className="flex flex-col gap-2">
+          <label htmlFor="link">Link (opcional)</label>
+          <input
+            type="text"
+            placeholder="Link"
+            name="link"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+            value={postagem.link}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+        </div> */}
         <button
           type='submit'
           className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
