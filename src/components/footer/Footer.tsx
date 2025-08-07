@@ -9,7 +9,7 @@ function Footer() {
       <div className="flex justify-center bg-indigo-900 text-white">
         <div className="container flex flex-col items-center py-4">
           <p className="text-xl font-bold">
-            Blog Pessoal de Sâmara | Copyright: {data}
+            Blog Pessoal de Sâmara &copy; {data}
           </p>
           <p className="text-lg">Acesse minhas redes de contato</p>
           <div className="flex gap-2">
